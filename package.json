@@ -1,0 +1,32 @@
+{
+  "name": "practom",
+  "version": "1.0.0",
+  "description": "randomizer practice tool",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jwerre1/practom.git"
+  },
+  "author": "Jordan Werre",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jwerre1/practom/issues"
+  },
+  "homepage": "https://github.com/jwerre1/practom#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "joi": "^17.4.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.12.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
