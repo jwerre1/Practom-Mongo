@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-const userSchema = new mongoose.Schema({
+const userSchema = new Schema({
   name: {
     type: String,
     required: true,
@@ -22,7 +23,8 @@ const userSchema = new mongoose.Schema({
   date: {
     type: Date,
     default: Date.now()
-  }
+  },
+  sets: [{ type: Schema.Types.ObjectId, ref: 'Set' }]
 });
 
-module.exports = mongoose.model("User", userSchema);
+module.exports = mongoose.model('User', userSchema);
