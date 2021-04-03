@@ -5,11 +5,6 @@ const User = require('../model/User');
 
 const { registerValidation, loginValidation } = require('../data/validation');
 
-
-exports.authenticate = (req, res, next) => {
-  res.send("auth.js route");
-}
-
 exports.newUser = async (req, res, next) => {
   const { error } = registerValidation(req.body);
   if (error) return res.status(400).json({ error: error.details[0].message });
@@ -52,6 +47,6 @@ exports.login = async (req, res, next) => {
     process.env.TOKEN_SECRET
   )
 
-
   res.json({ error: null, data: { token } });
 }
+

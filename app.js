@@ -14,13 +14,16 @@ mongoose.connect(
   () => console.log("connected to db")
 );
 
-const userRoutes = require('./routes/user');
+const authRoutes = require('./routes/auth');
+const adminRoutes = require('./routes/admin');
 const pageRoutes = require('./routes/page');
 const verifyToken = require('./routes/validate');
 
 app.use(express.json());
 
-app.use('/user', userRoutes);
+app.use('/auth', authRoutes);
+
+app.use('/admin', verifyToken, adminRoutes);
 
 app.use('/main', verifyToken, pageRoutes);
 
